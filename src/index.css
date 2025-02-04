@@ -7,3 +7,6 @@
 body{
   background-color: #111;
 }
+#skeletontasklist::-webkit-scrollbar{
+  display: none;
+}
