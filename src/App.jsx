@@ -5,20 +5,22 @@ import AdminDashboard from './components/Dashboard/AdminDashboard'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import { getlocalstorageitem, setlocalstorageitem } from './utils/localstorage'
 import { Authcontext } from './context/Authprovider'
+import { data } from 'autoprefixer'
 
 function App() {
 const [User, setUser] = useState(null)
 const [UserloggedInData, setUserloggedInData] = useState(null)
 const aduthdata = useContext(Authcontext)
 // console.log(aduthdata.employeedata.find((e)=>email == e.Email && password == e.Password));
-// useEffect(() => {
-//  if(aduthdata){
-//   const loggedInUser = localStorage.getItem("loggedInUser")
-//   if(loggedInUser){
-//     setUser(loggedInUser.role)
-//    }
-//  }
-// }, [aduthdata])
+useEffect(() => {
+  const loggindata = localStorage.getItem('loggedInUser')
+  if(loggindata){
+    const Userdata = JSON.parse(loggindata)
+    setUser(Userdata.role)
+    setUserloggedInData(Userdata.data)
+  }
+}, [])
+
 
  const handlelogin = (email,password)=>{
      if(email == 'admin@me.com' && password=='123'){
@@ -29,7 +31,7 @@ const aduthdata = useContext(Authcontext)
       if(employee){
       setUser('employee')
       setUserloggedInData(employee)
-      localStorage.setItem('loggedInUser',JSON.stringify({role: 'employee'}))
+      localStorage.setItem('loggedInUser',JSON.stringify({role: 'employee',data: employee}))
      }
     } else{
       alert("Invalid")
