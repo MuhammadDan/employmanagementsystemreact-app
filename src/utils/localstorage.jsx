@@ -1,7 +1,8 @@
 const employee = [
     {
         "Id": 1,
-        "Email": "Ujalakhan@example.com",
+        "Firstname": "UjaLakhan",
+        "Email": "Ujalakhan@email.com",
         "Password": "123",
         "tasks": [
             {
@@ -24,11 +25,13 @@ const employee = [
                 "taskDate": "2025-02-05",
                 "category": "Backend"
             }
-        ]
+        ],
+        "taskNumbers": { "active": 1, "newTask": 1, "completed": 1, "failed": 0 }
     },
     {
         "Id": 2,
-        "Email": "Muskankhan@example.com",
+        "Firstname": "Muskankhan",
+        "Email": "Muskankhan@email.com",
         "Password": "123",
         "tasks": [
             {
@@ -61,11 +64,13 @@ const employee = [
                 "taskDate": "2025-01-30",
                 "category": "Frontend"
             }
-        ]
+        ],
+        "taskNumbers": { "active": 1, "newTask": 1, "completed": 1, "failed": 0 }
     },
     {
         "Id": 3,
-        "Email": "ShaikhBilal@example.com",
+        "Firstname": "ShaikhBilal",
+        "Email": "ShaikhBilal@email.com",
         "Password": "123",
         "tasks": [
             {
@@ -98,11 +103,13 @@ const employee = [
                 "taskDate": "2025-02-06",
                 "category": "Backend"
             }
-        ]
+        ],
+        "taskNumbers": { "active": 1, "newTask": 1, "completed": 1, "failed": 1 }
     },
     {
         "Id": 4,
-        "Email": "WaleedNiazi@example.com",
+        "Firstname": "WaleedNiazi",
+        "Email": "WaleedNiazi@email.com",
         "Password": "123",
         "tasks": [
             {
@@ -125,11 +132,13 @@ const employee = [
                 "taskDate": "2025-01-29",
                 "category": "Security"
             }
-        ]
+        ],
+        "taskNumbers": { "active": 1, "newTask": 1, "completed": 1, "failed": 0 }
     },
     {
         "Id": 5,
-        "Email": "Maheenkhan@example.com",
+        "Firstname": "Maheenkhan",
+        "Email": "Maheenkhan@email.com",
         "Password": "123",
         "tasks": [
             {
@@ -152,9 +161,11 @@ const employee = [
                 "taskDate": "2025-02-18",
                 "category": "Marketing"
             }
-        ]
+        ],
+        "taskNumbers": { "active": 1, "newTask": 1, "completed": 0, "failed": 1 }
     }
 ];
+
 
 const admin = [
     {
@@ -173,6 +184,7 @@ export const setlocalstorageitem = () =>{
 export const getlocalstorageitem = ()=>{
      const employeedata = JSON.parse(localStorage.getItem("employees"))
      const admindata = JSON.parse(localStorage.getItem("admin"))
-     console.log(employeedata,admindata);
+    //  console.log(employeedata,admindata);
+    return {employeedata,admindata}
      
 }

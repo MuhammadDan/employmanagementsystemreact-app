@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Skeletontask = () => {
+const Skeletontask = ({UserLoggedInData}) => {
+  // console.log(UserLoggedInData);
+  
   return (
     <div id='skeletontasklist' className='h-[55%] overflow-x-auto gap-5 w-full flex flex-nowrap items-center justify-start py-5 mt-10'>
        <div className='flex-shrink-0 h-full p-5 w-[300px] bg-orange-400 rounded-xl'>
