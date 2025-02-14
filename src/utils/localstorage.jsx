@@ -85,13 +85,23 @@ const employee = [
             },
             {
                 "active": true,
-                "newTask": true,
+                "newTask": false,
                 "completed": false,
                 "failed": false,
                 "taskTitle": "Optimize Database",
                 "taskDescription": "Reduce query response time.",
                 "taskDate": "2025-02-14",
                 "category": "Database"
+            },
+            {
+                "active": false,
+                "newTask": true,
+                "completed": false,
+                "failed": false,
+                "taskTitle": "Make Landing Page",
+                "taskDescription": "Make a Landing page and integrate API with the help of ReactJS/ NextJS",
+                "taskDate": "2025-02-20",
+                "category": "Frontent"
             },
             {
                 "active": false,
@@ -170,7 +180,8 @@ const employee = [
 const admin = [
     {
         "Id": 1,
-        "Email": "admin@example.com",
+        "Firstname": "admin",
+        "Email": "admin@gmail.com",
         "Password": "123"
     }
 ];

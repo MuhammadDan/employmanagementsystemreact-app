@@ -11,16 +11,16 @@ const Skeletontask = ({UserLoggedInData}) => {
     <div id='skeletontasklist' className='h-[58%] overflow-x-auto gap-5 w-full flex flex-nowrap items-center justify-start py-5 mt-10'>
        {UserLoggedInData.tasks.map((e,idx)=>{
         if(e.active){
-          return <AcceptTask key={idx}/>
+          return <AcceptTask key={idx} Taskdata={e}/>
         }
         if(e.newTask){
-          return <NewTask key={idx}/>
+          return <NewTask key={idx} Taskdata={e}/>
         }
         if(e.completed){
-          return <CompleteTask key={idx}/>
+          return <CompleteTask key={idx} Taskdata={e}/>
         }
         if(e.failed){
-          return <FailedTask key={idx}/>
+          return <FailedTask key={idx} Taskdata={e}/>
         }
        })}
     </div>
