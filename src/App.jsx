@@ -45,7 +45,7 @@ useEffect(() => {
   <div>
 
     {!User ? <Login handlelogin={handlelogin} />:""}
-    {User == 'admin' ? <AdminDashboard /> : (User == 'employee' ? <EmployeeDashboard UserLoggedInData={UserloggedInData}/> : null)}
+    {User == 'admin' ? <AdminDashboard changeUser={setUser}/> : (User == 'employee' ? <EmployeeDashboard changeUser={setUser} UserLoggedInData={UserloggedInData}/> : null)}
   </div>
   </>
   )

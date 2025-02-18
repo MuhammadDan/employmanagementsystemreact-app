@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Header = ({UserLoggedInData}) => {
+const Header = (props) => {
   // console.log(UserLoggedInData);
   //  const [Username, setUsername] = useState("")
   // if(!UserLoggedInData){
@@ -10,7 +10,7 @@ const Header = ({UserLoggedInData}) => {
   // }
   const logoutuser = ()=>{
     localStorage.setItem("loggedInUser","")
-    window.location.reload()
+    props.ChangeUser('');// yai setuser ko khali kardega jo APP.jsx mai hai jismai userdata ka role define hoa hai wo jab khali hoga to login form khul jyega 
   }
   return (
     <>

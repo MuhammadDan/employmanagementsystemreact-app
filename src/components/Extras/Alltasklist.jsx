@@ -15,8 +15,8 @@ const Alltasklist = () => {
             </div>
      <div className=''>
      {
-            Admintdata.employeedata.map((item)=>{
-                return <div className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
+            Admintdata.employeedata.map((item,idx)=>{
+                return <div key={idx} className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
                 <h2 className='w-1/5 text-lg font-medium'>{item.Firstname}</h2>
                 <h3 className='w-1/5 text-lg font-medium text-white'>{item.taskNumbers.newTask}</h3>
                 <h5 className='w-1/5 text-lg font-medium text-yellow-400'>{item.taskNumbers.active}</h5>
