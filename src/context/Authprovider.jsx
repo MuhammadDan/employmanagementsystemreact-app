@@ -8,21 +8,31 @@ const Authprovider = ({children}) => {
   // localStorage.clear("")
   const [UserData, setUserData] = useState(null)
  
+  // useEffect(() => {
+  //   setlocalstorageitem()
+  //   const {employeedata,admindata} = getlocalstorageitem()
+  //   setUserData({employeedata,admindata})
+  // }, [])
+  console.log(UserData);
   useEffect(() => {
-    setlocalstorageitem()
-    const {employeedata,admindata} = getlocalstorageitem()
-    setUserData({employeedata,admindata})
-  }, [])
-  
+      setlocalstorageitem();
+      const {employeedata} = getlocalstorageitem();
+      if (employeedata && Array.isArray(employeedata) && employeedata.length > 0) {
+        setUserData(employeedata);
+      } else {
+        console.warn("Employeedata is empty or invalid, not updating UserData.");
+      }
+    }, []);
+    
   
 
   return (
     <div>
-        <Authcontext.Provider value={UserData}>
+        <Authcontext.Provider value={[UserData,setUserData]}>
         {children}
         </Authcontext.Provider>
         </div>
   )
 }
 
-export default Authprovider
+export default Authprovider  

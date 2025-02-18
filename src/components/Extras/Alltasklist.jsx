@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { Authcontext } from '../../context/Authprovider';
 
 const Alltasklist = () => {
-    const Admintdata = useContext(Authcontext);
+    const [UserData,setUserData] = useContext(Authcontext);
+    // console.log(UserData)
      
   return (
     <div id='Alltask' className='bg-[#1c1c1c] p-5 rounded mt-5 '>
@@ -15,7 +16,7 @@ const Alltasklist = () => {
             </div>
      <div className=''>
      {
-            Admintdata.employeedata.map((item,idx)=>{
+            UserData.map((item,idx)=>{
                 return <div key={idx} className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
                 <h2 className='w-1/5 text-lg font-medium'>{item.Firstname}</h2>
                 <h3 className='w-1/5 text-lg font-medium text-white'>{item.taskNumbers.newTask}</h3>
@@ -30,4 +31,4 @@ const Alltasklist = () => {
   )
 }
 
-export default Alltasklist
+export default Alltasklist 

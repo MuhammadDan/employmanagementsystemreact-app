@@ -10,7 +10,7 @@ import { data } from 'autoprefixer'
 function App() {
 const [User, setUser] = useState(null)
 const [UserloggedInData, setUserloggedInData] = useState(null)
-const aduthdata = useContext(Authcontext)
+const [UserData,setUserData] = useContext(Authcontext)
 // console.log(aduthdata.employeedata.find((e)=>email == e.Email && password == e.Password));
 useEffect(() => {
   const loggindata = localStorage.getItem('loggedInUser')
@@ -26,8 +26,8 @@ useEffect(() => {
      if(email == 'admin@me.com' && password=='123'){
       setUser('admin')
       localStorage.setItem('loggedInUser',JSON.stringify({role: 'admin'}))
-     }else if(aduthdata){
-      const employee = aduthdata.employeedata.find((e)=>email == e.Email && password == e.Password)
+     }else if(UserData){
+      const employee = UserData.find((e)=>email == e.Email && password == e.Password)
       if(employee){
       setUser('employee')
       setUserloggedInData(employee)
@@ -51,4 +51,4 @@ useEffect(() => {
   )
 }
 
-export default App
+export default App 

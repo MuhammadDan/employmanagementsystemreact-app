@@ -47,4 +47,3 @@ const Login = ({handlelogin}) => {
 };
 
 export default Login;
-//24:43
