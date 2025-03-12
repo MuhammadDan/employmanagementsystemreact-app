@@ -199,7 +199,10 @@ const admin = [
     }
 ];
 
-
+// jab kabhi galti sai local storage ka data delete hojye to 214 sai 221 tak comment karo or
+//  203 sai 212 tak comment hatao phir data jaye to wapis comment karo or nechai walai code 
+// ka comment hatado
+ 
 // export const setlocalstorageitem = () => {
 //     // if (employees) {
 //     //     localStorage.setItem("employees", JSON.stringify(employees));
