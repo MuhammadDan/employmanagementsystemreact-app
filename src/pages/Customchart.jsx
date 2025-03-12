@@ -1,31 +1,3 @@
-// import React from 'react'
-// import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-
-// const chartdata = [
-//     {name:'Jan',value:30},
-//     {name:'Feb',value:80},
-//     {name:'Mar',value:40},
-//     {name:'Apr',value:90},
-//     {name:'May',value:50}
-// ];
-// const Customchart = () => {
-//   return (
-//     <div className='w-full h-60  p-4 rounded-xl'>
-//        <h2 className='text-white'>Performance<span className='text-green-500'>Of Last 5 Month</span></h2>
-//        <ResponsiveContainer width='100%' height='100%'>
-//         <LineChart chartdata={chartdata}>
-//             <XAxis dataKey="name" stroke='#9994d8'/>
-//             <YAxis stroke='#8994d' />
-//             <Tooltip />
-//             <Line type='monotone' dataKey='value' stroke='#ff4d4d' strokeWidth={2} fillOpacity={0.3} fill='#ff4d4d' />
-//         </LineChart>
-//        </ResponsiveContainer>
-//     </div>
-//   )
-// }
-
-// export default Customchart
-
 import React from "react";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
