@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '../Extras/Header'
 import CreateTasklistskeleton from '../Extras/CreateTasklistskeleton'
 import Alltasklist from '../Extras/Alltasklist'
+import Customchart from '../../pages/Customchart'
 
 const AdminDashboard = (props) => {
   return (
@@ -9,6 +10,7 @@ const AdminDashboard = (props) => {
         <Header ChangeUser={props.changeUser}/>
        <CreateTasklistskeleton />
        <Alltasklist />
+       <Customchart />
     </div>
   )
 }

@@ -200,15 +200,24 @@ const admin = [
 ];
 
 
+// export const setlocalstorageitem = () => {
+//     // if (employees) {
+//     //     localStorage.setItem("employees", JSON.stringify(employees));
+//     // }
+//     // if (admins) {
+//     //     localStorage.setItem("admin", JSON.stringify(admins));
+//     // }
+//     localStorage.setItem("employees", JSON.stringify(employee));
+//     localStorage.setItem("admin", JSON.stringify(admin));
+// };
+
 export const setlocalstorageitem = (employees, admins) => {
-    // if (employees) {
-    //     localStorage.setItem("employees", JSON.stringify(employees));
-    // }
-    // if (admins) {
-    //     localStorage.setItem("admin", JSON.stringify(admins));
-    // }
-    localStorage.setItem("employees", JSON.stringify(employee));
-    localStorage.setItem("admin", JSON.stringify(admin));
+    if (employees) {
+        localStorage.setItem("employees", JSON.stringify(employees));
+    }
+    if (admins) {
+        localStorage.setItem("admin", JSON.stringify(admins));
+    }
 };
 export const getlocalstorageitem = ()=>{
      const employeedata = JSON.parse(localStorage.getItem("employees"))

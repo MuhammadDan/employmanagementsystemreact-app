@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Authcontext } from "../../context/Authprovider";
 import { v4 as uuidv4 } from "uuid";
-import { setlocalstorageitem } from "../../utils/localstorage";
+import { getlocalstorageitem, setlocalstorageitem } from "../../utils/localstorage";
 
 const CreateTasklistskeleton = () => {
   const [UserData, setUserData] = useContext(Authcontext);
@@ -52,8 +52,10 @@ const CreateTasklistskeleton = () => {
 
       // Update UserData only if a task was assigned
       if (updatedUserData !== UserData) {
+        console.log(updatedUserData);
+        
         setUserData(updatedUserData);
-        setlocalstorageitem(updatedUserData);
+        setlocalstorageitem(updatedUserData,getlocalstorageitem().admindata);
         console.log("Updated UserData:", updatedUserData);
       } else {
         alert("Employee not found! Please assign a valid employee.");
