@@ -16,12 +16,13 @@ const Authprovider = ({children}) => {
   console.log(UserData);
   useEffect(() => {
       setlocalstorageitem();
-      const {employeedata} = getlocalstorageitem();
+      const {employeedata,admindata} = getlocalstorageitem();
       if (employeedata && Array.isArray(employeedata) && employeedata.length > 0) {
         setUserData(employeedata);
       } else {
         console.warn("Employeedata is empty or invalid, not updating UserData.");
       }
+      
     }, []);
     
   

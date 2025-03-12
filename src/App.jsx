@@ -3,9 +3,7 @@ import './App.css'
 import Login from './components/Auth/Login'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
-import { getlocalstorageitem, setlocalstorageitem } from './utils/localstorage'
 import { Authcontext } from './context/Authprovider'
-import { data } from 'autoprefixer'
 
 function App() {
 const [User, setUser] = useState(null)
@@ -21,7 +19,6 @@ useEffect(() => {
   }
 }, [])
 
-
  const handlelogin = (email,password)=>{
      if(email == 'admin@me.com' && password=='123'){
       setUser('admin')
@@ -29,6 +26,7 @@ useEffect(() => {
      }else if(UserData){
       const employee = UserData.find((e)=>email == e.Email && password == e.Password)
       if(employee){
+      // localStorage.getItem()
       setUser('employee')
       setUserloggedInData(employee)
       localStorage.setItem('loggedInUser',JSON.stringify({role: 'employee',data: employee}))

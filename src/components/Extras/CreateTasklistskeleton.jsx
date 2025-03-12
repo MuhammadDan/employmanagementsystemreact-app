@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Authcontext } from "../../context/Authprovider";
+import { v4 as uuidv4 } from "uuid";
 import { setlocalstorageitem } from "../../utils/localstorage";
 
 const CreateTasklistskeleton = () => {
@@ -16,6 +17,7 @@ const CreateTasklistskeleton = () => {
 
     // Create a new task object
     const newTask = {
+      ids: uuidv4(),  
       active: false,
       newTask: true,
       completed: false,
@@ -109,7 +111,7 @@ const CreateTasklistskeleton = () => {
           <textarea
             value={taskDescription}
             onChange={(e) => settaskDescription(e.target.value)}
-            className="w-full h-44 text-sm py-2 rounded outline-none bg-transparent border-[1px] border-gray-400"
+            className="w-full h-44 text-sm px-2 py-2 rounded outline-none bg-transparent border-[1px] border-gray-400"
             cols={30}
             rows={10}
           ></textarea>

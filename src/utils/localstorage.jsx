@@ -5,7 +5,8 @@ const employee = [
         "Email": "Ujalakhan@email.com",
         "Password": "123",
         "tasks": [
-            {
+            {  
+                "ids":"100",
                 "active": true,
                 "newTask": true,
                 "completed": false,
@@ -16,6 +17,7 @@ const employee = [
                 "category": "UI/UX"
             },
             {
+                "ids":"101",
                 "active": false,
                 "newTask": false,
                 "completed": true,
@@ -35,6 +37,7 @@ const employee = [
         "Password": "123",
         "tasks": [
             {
+                "ids":"102",
                 "active": true,
                 "newTask": false,
                 "completed": false,
@@ -45,6 +48,7 @@ const employee = [
                 "category": "Documentation"
             },
             {
+                "ids":"103",
                 "active": false,
                 "newTask": true,
                 "completed": false,
@@ -55,6 +59,7 @@ const employee = [
                 "category": "Testing"
             },
             {
+                "ids":"104",
                 "active": false,
                 "newTask": false,
                 "completed": true,
@@ -74,6 +79,7 @@ const employee = [
         "Password": "123",
         "tasks": [
             {
+                "ids":"105",
                 "active": false,
                 "newTask": false,
                 "completed": false,
@@ -84,6 +90,7 @@ const employee = [
                 "category": "DevOps"
             },
             {
+                "ids":"106",
                 "active": true,
                 "newTask": false,
                 "completed": false,
@@ -94,6 +101,7 @@ const employee = [
                 "category": "Database"
             },
             {
+                "ids":"107",
                 "active": false,
                 "newTask": true,
                 "completed": false,
@@ -104,6 +112,7 @@ const employee = [
                 "category": "Frontent"
             },
             {
+                "ids":"108",
                 "active": false,
                 "newTask": false,
                 "completed": true,
@@ -123,6 +132,7 @@ const employee = [
         "Password": "123",
         "tasks": [
             {
+                "ids":"109",
                 "active": true,
                 "newTask": true,
                 "completed": false,
@@ -133,6 +143,7 @@ const employee = [
                 "category": "Frontend"
             },
             {
+                "ids":"110",
                 "active": false,
                 "newTask": false,
                 "completed": true,
@@ -152,6 +163,7 @@ const employee = [
         "Password": "123",
         "tasks": [
             {
+                "ids":"111",
                 "active": false,
                 "newTask": false,
                 "completed": false,
@@ -162,6 +174,7 @@ const employee = [
                 "category": "Fullstack"
             },
             {
+                "ids":"112",
                 "active": true,
                 "newTask": true,
                 "completed": false,
@@ -188,12 +201,14 @@ const admin = [
 
 
 export const setlocalstorageitem = (employees, admins) => {
-    if (employees) {
-        localStorage.setItem("employees", JSON.stringify(employees));
-    }
-    if (admins) {
-        localStorage.setItem("admin", JSON.stringify(admins));
-    }
+    // if (employees) {
+    //     localStorage.setItem("employees", JSON.stringify(employees));
+    // }
+    // if (admins) {
+    //     localStorage.setItem("admin", JSON.stringify(admins));
+    // }
+    localStorage.setItem("employees", JSON.stringify(employee));
+    localStorage.setItem("admin", JSON.stringify(admin));
 };
 export const getlocalstorageitem = ()=>{
      const employeedata = JSON.parse(localStorage.getItem("employees"))
